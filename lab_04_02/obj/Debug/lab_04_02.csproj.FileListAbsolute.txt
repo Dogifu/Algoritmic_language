@@ -1,0 +1,6 @@
+/Users/user/Projects/lab_04_02/lab_04_02/obj/Debug/lab_04_02.csproj.AssemblyReference.cache
+/Users/user/Projects/lab_04_02/lab_04_02/obj/Debug/lab_04_02.csproj.CoreCompileInputs.cache
+/Users/user/Projects/lab_04_02/lab_04_02/bin/Debug/lab_04_02.exe
+/Users/user/Projects/lab_04_02/lab_04_02/bin/Debug/lab_04_02.pdb
+/Users/user/Projects/lab_04_02/lab_04_02/obj/Debug/lab_04_02.exe
+/Users/user/Projects/lab_04_02/lab_04_02/obj/Debug/lab_04_02.pdb
