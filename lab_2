@@ -1,0 +1,306 @@
+using System;
+ abstract class Vehicle // базовый класс 
+{
+    protected double price, V; // поля класса (цена и скорость)
+    protected int Year; // год выпуска
+    protected Vehicle(double price, double V, int Year) // констурктор класса
+    {
+        this.price = price;
+        this.V = V;
+        this.Year = Year;
+    }
+    public abstract void Info();  
+}
+class Plane : Vehicle // производный класс самолет 
+{
+   string NAME; // поля класса (название, высота и кол-во пассажиров)
+   public double H;
+   public int N;
+    public Plane( string NAME, double price, double V, int Year, double H, int N) : base (price, V, Year) // вызов конструктора через ключевое слово base
+    {
+        this.H = H;
+        this.N = N;
+        this.NAME = NAME;
+    }
+      public override void Info() // переопределенная функция печати 
+    {
+        Console.WriteLine("Название: " + NAME +
+            " Высота = " + H + " м " + 
+            " Вместительность пассажиров: " + N +
+            " Скорость: " + V + " км/ч " +
+            " Цена: " + price + " тыс.руб " +
+            " Год выпуска: " + Year + " г ");
+    }
+}
+ class Car : Vehicle // производный класс машина 
+{
+    protected string name; // поле класса 
+    public Car(string name, double price, double V, int Year) : base(price, V, Year) // вызов конструктора 
+    {
+        this.name = name;
+    }
+    public override void Info() // функция печати 
+    {
+        Console.WriteLine("Марка и модель: " + name +
+           " Скорость: " + V + " км/ч " +
+           " Цена: " + price + " тыс.руб " + 
+           " Год выпуска: " + Year + " г ");
+    }
+}
+
+
+class Ship : Vehicle // производный класс корабль 
+{
+    protected int Kolvo; // поля класса 
+    protected string nazvanie, port;
+    public Ship (string nazvanie,  double V, double price, int Year, int Kolvo, string port) : base(price, V, Year) // конструктор класса
+    {
+        this.Kolvo = Kolvo;
+        this.nazvanie = nazvanie;
+        this.port = port;
+    }
+
+    public override void Info() // функция печати 
+    {
+        Console.WriteLine("Название: " + nazvanie +
+           " Скорость: " + V + " узлов " +
+           " Цена: " + price + " тыc.руб " +
+           " Год выпуска: " + Year + " г. "+
+           " Количество пассажиров: " + Kolvo +
+           " Порт приписки: " + port);
+    }
+}
+namespace lab_2
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+           
+            Plane plane = new Plane ("Як",5000,592,1934,4100,27);
+            Car car = new Car("Lexus RX/350",6540,200,2009);
+            Ship ship = new Ship("Москва",32,180000,1979,510,"Севастополь");
+            plane.Info();
+            car.Info();
+            ship.Info();
+           
+        }
+    }
+}
+
+
+
+
+using System;
+
+
+
+
+
+ class DocumentWorker
+{
+
+
+    public virtual void OpenDocument()
+    {
+
+        Console.WriteLine("Документ открыт");
+
+    }
+
+    public virtual void EditDocument()
+    {
+
+        Console.WriteLine("Редактирование документа доступно в версии Pro");
+
+    }
+
+
+    public virtual void SaveDocument()
+    {
+
+        Console.WriteLine("Сохранение документа доступно в версии Pro");
+
+    }
+
+}
+
+class ProDocumentWorker : DocumentWorker
+{
+
+
+    public override void OpenDocument()
+    {
+        Console.WriteLine("Документ открыт в версии pro");
+    }
+
+
+    public override void EditDocument()
+    {
+        Console.WriteLine("Документ отредактирован в версии pro");
+    }
+
+
+
+    public override void SaveDocument()
+    {
+        Console.WriteLine("Документ сохранен в старом формате, сохранение в остальных форматах доступно в версии Expert");
+    }
+
+}
+
+
+
+
+class ExpertDocumentWorker : ProDocumentWorker
+{
+
+
+
+    public override void OpenDocument()
+    {
+        Console.WriteLine("Документ открыт в версии expert");
+    }
+
+
+
+
+    public override void EditDocument()
+    {
+        Console.WriteLine("Документ отредактирован в версии expert");
+    }
+
+
+
+    public override void SaveDocument()
+    {
+        Console.WriteLine("Документ сохранен в новом формате");
+    }
+}
+
+
+
+
+
+
+namespace lab_2_3
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            int pro, expert, key, fu, fu1, fu2, ch;
+            string str, str1, str2, str3, str4;
+            DocumentWorker doc1 = new DocumentWorker();
+            ProDocumentWorker pro1 = new ProDocumentWorker();
+            ExpertDocumentWorker expert1 = new ExpertDocumentWorker();
+            pro = 2281337;
+            expert = 1337228;
+            Console.WriteLine("Выберите вашу версию");
+            Console.WriteLine("1. Базовая версия");
+            Console.WriteLine("2. pro версия");
+            Console.WriteLine("3. expert версия");
+            str4 = Console.ReadLine();
+            ch = Convert.ToInt32(str4);
+            if (ch == 1)
+            {
+                Console.WriteLine("У вас базовая версия. " +
+                    "Выберите режим работы с файлом:");
+                Console.WriteLine("1. Open file");
+                Console.WriteLine("2. Edit file");
+                Console.WriteLine("3. Save file");
+                str3 = Console.ReadLine();
+                fu2 = Convert.ToInt32(str3);
+
+                if (fu2 == 1)
+                {
+                    Console.WriteLine("Вы выбрали режим открытия файла");
+                    doc1.OpenDocument();
+                }
+                if (fu2 == 2)
+                {
+                    Console.WriteLine("Вы выбрали режим редактирования файла");
+                    doc1.EditDocument();
+                }
+                if (fu2 == 3)
+                {
+                    Console.WriteLine("Вы выбрали режим сохранения файла");
+                    doc1.SaveDocument();
+                }
+            }
+            else if (ch == 2)
+            {
+                Console.WriteLine("Введите ключ версии");
+                str = Console.ReadLine();
+                key = Convert.ToInt32(str);
+                if (key == pro)
+                {
+                    Console.WriteLine("У вас pro версия. " +
+                        "Выберите режим работы с файлом:");
+                    Console.WriteLine("1. Open file");
+                    Console.WriteLine("2. Edit file");
+                    Console.WriteLine("3. Save file");
+                    str1 = Console.ReadLine();
+                    fu = Convert.ToInt32(str1);
+                    if (fu == 1)
+                    {
+                        Console.WriteLine("Вы выбрали режим открытия файла");
+                        pro1.OpenDocument();
+                    }
+                    if (fu == 2)
+                    {
+                        Console.WriteLine("Вы выбрали режим редактирования файла");
+                        pro1.EditDocument();
+                    }
+                    if (fu == 3)
+                    {
+                        Console.WriteLine("Вы выбрали режим сохранения файла");
+                        pro1.SaveDocument();
+                    }
+                }
+            }
+            else if (ch == 3)
+            {
+                Console.WriteLine("Введите ключ версии");
+                str = Console.ReadLine();
+                key = Convert.ToInt32(str);
+                if (key == expert)
+                {
+                    Console.WriteLine("У вас expert версия. " +
+                        "Выберите режим работы с файлом:");
+                    Console.WriteLine("1. Open file");
+                    Console.WriteLine("2. Edit file");
+                    Console.WriteLine("3. Save file");
+                    str2 = Console.ReadLine();
+                    fu1 = Convert.ToInt32(str2);
+                    if (fu1 == 1)
+                    {
+                        Console.WriteLine("Вы выбрали режим открытия файла");
+                        expert1.OpenDocument();
+                    }
+                    if (fu1 == 2)
+                    {
+                        Console.WriteLine("Вы выбрали режим редактирования файла");
+                        expert1.EditDocument();
+                    }
+                    if (fu1 == 3)
+                    {
+                        Console.WriteLine("Вы выбрали режим сохранения файла");
+                        expert1.SaveDocument();
+                    }
+                }
+            }
+            }
+        }    
+}
+
+
+            
+
+
+
+            
+
+            
+          
+
