@@ -1,0 +1,152 @@
+using System;
+class Restangle // класс прямоугольник 
+{
+    private double sideA, sideB;
+
+    public Restangle(double sideA, double sideB) // конструктор 
+    {
+        this.sideA = sideA;
+        this.sideB = sideB;
+    }
+    public double AreaCalculator() // метод для вычисления площади 
+    {
+        return sideA * sideB;
+    }
+    public double PerimeterCalculator() // метод для вычисления параметра 
+    {
+        return (sideA + sideB) * 2;
+    }
+
+    public double Area // свойство 
+    {
+        get
+        {
+            return sideA * sideB;
+        }
+    }
+         public double Perimeter // свойство 
+    {
+        get
+        {
+            return (sideA + sideB) * 2 ;
+        }
+    }
+    public  void print () // метод печати 
+    {
+        Console.WriteLine("A = "+ sideA + " B = " + sideB + " S = " + AreaCalculator() + " P = " + PerimeterCalculator());
+    }
+}
+namespace lab1
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+              Console.WriteLine("Первая часть:");
+              Console.WriteLine();
+              Console.Write("Char_Max_Value = " + (int)Char.MaxValue + " | ");
+              Console.WriteLine("Char_Min_Value = " + (int)Char.MinValue);
+              Console.Write("Byte_Max_ Value = " + Byte.MaxValue + " | " );
+              Console.WriteLine("Byte_Min_ Value = " + Byte.MinValue);
+              Console.Write("Int_Max_ Value = " + Int32.MaxValue + " | ");
+              Console.WriteLine("Int_Max_ Value = " + Int32.MinValue);
+              Console.Write("Double_Max_Value = " + Double.MaxValue + " | ");
+              Console.WriteLine("Double_Min_Value = " + Double.MinValue);
+              Console.Write("Decimal_Max_Value = " + Decimal.MaxValue + " | ");
+              Console.WriteLine("Decimal_Min_Value = " + Decimal.MinValue);
+              Console.Write("Float_Max_Value = " + float.MaxValue + " | ");
+              Console.WriteLine("Float_Min_Value = " + float.MinValue);
+              Console.Write("Long_Max_Value = " + long.MaxValue + " | ");
+              Console.WriteLine("Long_Min_Value = " + long.MinValue);
+              Console.Write("sbyte_Max_Value = " + SByte.MaxValue + " | ");
+              Console.WriteLine("sbyte_Min_Value = " + SByte.MinValue);
+              Console.Write("short_Max_Value = " + short.MaxValue + " | ");
+              Console.WriteLine("short_Min_Value = " + short.MinValue);
+              Console.Write("uint_Max_Value = " + uint.MaxValue + " | ");
+              Console.WriteLine("uint_Min_Value = " + uint.MinValue);
+              Console.Write("ulong_Max_Value = " + ulong.MaxValue + " | ");
+              Console.WriteLine("ulong_Min_Value = " + ulong.MinValue);
+              Console.Write("ushort_Max_Value = " + ushort.MaxValue + " | ");
+              Console.WriteLine("ushort_Min_Value = " + ushort.MinValue);
+              Console.Write("bool_Max_Value = " + bool.TrueString + " | ");
+              Console.WriteLine("bool_Min_Value = " + bool.FalseString);
+
+
+            Console.WriteLine("Вторая часть:");
+            Console.WriteLine();
+            Restangle a = new Restangle(5, 6);
+            Console.WriteLine("Площадь = " + a.Area);
+            Console.WriteLine("Периметр = " + a.Perimeter);
+            Console.WriteLine();
+            Restangle b = new Restangle(10, 11);
+            b.print();
+
+        }
+    }
+}
+
+
+
+
+
+using System;
+class Point
+{
+    private int _x, _y;
+    public Point (int x, int y)
+    {
+        _x = x;
+        _y = y;
+    }
+    public int x
+    {
+        get
+        {
+            return _x;
+        }
+    }
+
+    public int y
+    {
+        get
+        {
+            return _y;
+        }
+    }
+}
+class Figure
+{
+    Point[] points;
+    string name;
+    public Figure(string name, params Point[] points)
+    {
+        this.name = name;
+        this.points = new Point[points.Length];
+        for (int i = 0; i < points.Length; i++)
+            this.points[i] = new Point(points[i].x, points[i].y);
+    }
+    public double LenghtSide(Point A, Point B)
+    {
+        return Math.Sqrt((A.x - B.x) * (A.x - B.x) + (A.y - B.y) * (A.y - B.y));
+    }
+    public double getPerimetr()
+    {
+        double sum = 0;
+        for (int i = 0; i < points.Length - 1; i++)
+            sum += LenghtSide(points[i], points[i + 1]);
+        sum += LenghtSide(points[0], points[points.Length - 1]);
+        return sum;
+    }
+}
+namespace sem_1
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            Figure fig1 = new Figure("Прямоугольник", new Point(1, 1), new Point(11, 1), new Point(11, 6), new Point(1, 6));       
+            Console.WriteLine("P=" + fig1.getPerimetr());
+            Console.WriteLine("L=" + fig1.LenghtSide(new Point(1, 1), new Point(11, 1)));
+        }
+    }
+}
