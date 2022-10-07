@@ -1,0 +1,15 @@
+/Users/user/Projects/lab_05_01/lab_05_01/obj/Debug/net6.0/lab_05_01.csproj.AssemblyReference.cache
+/Users/user/Projects/lab_05_01/lab_05_01/obj/Debug/net6.0/lab_05_01.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/Projects/lab_05_01/lab_05_01/obj/Debug/net6.0/lab_05_01.AssemblyInfoInputs.cache
+/Users/user/Projects/lab_05_01/lab_05_01/obj/Debug/net6.0/lab_05_01.AssemblyInfo.cs
+/Users/user/Projects/lab_05_01/lab_05_01/obj/Debug/net6.0/lab_05_01.csproj.CoreCompileInputs.cache
+/Users/user/Projects/lab_05_01/lab_05_01/bin/Debug/net6.0/lab_05_01
+/Users/user/Projects/lab_05_01/lab_05_01/bin/Debug/net6.0/lab_05_01.deps.json
+/Users/user/Projects/lab_05_01/lab_05_01/bin/Debug/net6.0/lab_05_01.runtimeconfig.json
+/Users/user/Projects/lab_05_01/lab_05_01/bin/Debug/net6.0/lab_05_01.dll
+/Users/user/Projects/lab_05_01/lab_05_01/bin/Debug/net6.0/lab_05_01.pdb
+/Users/user/Projects/lab_05_01/lab_05_01/obj/Debug/net6.0/lab_05_01.dll
+/Users/user/Projects/lab_05_01/lab_05_01/obj/Debug/net6.0/refint/lab_05_01.dll
+/Users/user/Projects/lab_05_01/lab_05_01/obj/Debug/net6.0/lab_05_01.pdb
+/Users/user/Projects/lab_05_01/lab_05_01/obj/Debug/net6.0/lab_05_01.genruntimeconfig.cache
+/Users/user/Projects/lab_05_01/lab_05_01/obj/Debug/net6.0/ref/lab_05_01.dll
